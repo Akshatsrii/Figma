@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Temporary Figma Inspection Scripts & Dumps
+*.bin
+*.py
+*.txt
+*.html.bak
+figma_parsed.json
+meta.json
+test_*.js
+inspect_*.js
+check_*.js
+dump_*.js
+decode_*.js
+capture_*.js
+extract_*.js
+list_*.js
+save_*.js
+drive_page.html
+Assets - Images & Icons/
+FIGMA.fig
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

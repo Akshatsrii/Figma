@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simplifying Compliance for Research Analysts</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/Logo.png">
+  
+  <!-- Google Fonts: Roboto, Inter, Figtree -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Inter:wght@500;600;700&family=Roboto:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="Home">
+        <img src="assets/Logo.png" alt="Company Logo" class="logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link">Our Services</a></li>
+          <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Right: CTA & Mobile Hamburger -->
+      <div class="header-actions">
+        <button type="button" class="btn btn-primary btn-contact-header" data-modal-trigger data-service="Book a Consultation">
+          <span class="btn-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </span>
+          <span class="btn-text">Contact Us</span>
+        </button>
+
+        <!-- Mobile & Tablet Menu Hamburger Button -->
+        <button class="hamburger-btn" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <img src="assets/Menu.png" alt="Open menu" class="menu-icon-img">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE / TABLET DRAWER ==================== -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="#" class="brand-logo" aria-label="Home">
+        <img src="assets/Logo.png" alt="Company Logo" class="logo-img-drawer">
+      </a>
+      <button class="drawer-close-btn" id="drawerClose" aria-label="Close mobile menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <ul class="drawer-menu">
+        <li>
+          <a href="#home" class="drawer-link active">
+            <span class="drawer-link-left">
+              <img src="assets/Home.png" alt="" class="drawer-icon">
+              <span>Home</span>
+            </span>
+            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#about" class="drawer-link">
+            <span class="drawer-link-left">
+              <img src="assets/AboutUs.png" alt="" class="drawer-icon">
+              <span>About Us</span>
+            </span>
+            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#services" class="drawer-link">
+            <span class="drawer-link-left">
+              <img src="assets/Our Services.png" alt="" class="drawer-icon">
+              <span>Our Services</span>
+            </span>
+            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#pricing" class="drawer-link">
+            <span class="drawer-link-left">
+              <img src="assets/Pricing.png" alt="" class="drawer-icon">
+              <span>Pricing</span>
+            </span>
+            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#faq" class="drawer-link">
+            <span class="drawer-link-left">
+              <img src="assets/FAQ.png" alt="" class="drawer-icon">
+              <span>FAQ</span>
+            </span>
+            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="drawer-link">
+            <span class="drawer-link-left">
+              <img src="assets/Contact.png" alt="" class="drawer-icon">
+              <span>Contact</span>
+            </span>
+            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-footer">
+        <button type="button" class="btn btn-primary btn-drawer-contact" data-modal-trigger data-service="Book a Consultation">
+          <span class="btn-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </span>
+          <span class="btn-text">Contact Us</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+
+    <!-- SECTION 1: HERO SECTION -->
+    <section class="hero-section" id="home">
+      <!-- Decorative background blur ellipse -->
+      <div class="hero-bg-blur" aria-hidden="true"></div>
+
+      <div class="hero-container">
+        <!-- Hero Left Column: Headings, Paragraph, Checklist, CTAs -->
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Simplifying<br>
+            <span class="highlight-wrapper">
+              Compliance
+              <img src="assets/underline-Vector.png" alt="" class="curve-underline" aria-hidden="true">
+            </span> For<br>
+            Research Analysts
+          </h1>
+
+          <p class="hero-subtitle">
+            Stay focused on your insights—we’ll handle the compliance. Our expert solutions ensure your research practices meet every regulatory requirement with confidence and ease
+          </p>
+
+          <!-- Checklist items -->
+          <ul class="hero-checklist" aria-label="Key Benefits">
+            <li class="checklist-item">
+              <img src="assets/check-sign.png" alt="Checked" class="check-icon">
+              <span class="checklist-text">End-to-end compliance support</span>
+            </li>
+            <li class="checklist-item">
+              <img src="assets/check-sign.png" alt="Checked" class="check-icon">
+              <span class="checklist-text">Regulatory filings made simple</span>
+            </li>
+            <li class="checklist-item">
+              <img src="assets/check-sign.png" alt="Checked" class="check-icon">
+              <span class="checklist-text">Tailored solutions for independent analysts &amp; firms</span>
+            </li>
+          </ul>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta-group">
+            <button type="button" class="btn btn-primary btn-hero" data-modal-trigger data-service="End-to-End Compliance Support">Get Started</button>
+            <button type="button" class="btn btn-outline btn-hero" data-modal-trigger data-service="Book a Consultation">Book a Consultation</button>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: Graphic Banner Image -->
+        <div class="hero-graphic">
+          <img src="assets/Banner Image.png" 
+               alt="Compliance platform illustration showing research analyst with credentials, 4.8 client rating, and trusted by 250+ professionals" 
+               class="banner-image"
+               loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: WHY COMPLIANCE MATTERS -->
+    <section class="why-compliance-section" id="about">
+      <div class="section-container">
+        <!-- Section Header Row -->
+        <div class="section-header-row">
+          <div class="section-title-col">
+            <h2 class="section-heading">Why Compliance Matters for Research Analysts</h2>
+          </div>
+          <div class="section-desc-col">
+            <p class="section-lead-text">
+              In today’s regulatory environment, even a small oversight can lead to penalties, reputational risks, and loss of client trust. We help Research Analysts and firms navigate complex compliance requirements so they can focus on delivering high-quality research without worry.
+            </p>
+          </div>
+        </div>
+
+        <!-- Decorative Divider Chevrons -->
+        <div class="decorative-vector-wrap" aria-hidden="true">
+          <img src="assets/Vector1.png" alt="" class="decorative-vector">
+        </div>
+
+        <!-- Section Content Row: Graphic + 3 Feature Cards -->
+        <div class="section-content-row">
+          <!-- Illustration Left -->
+          <div class="section-media-col">
+            <img src="assets/Section2-Image.png" 
+                 alt="Illustration of research analyst analyzing regulatory charts and compliance audit metrics" 
+                 class="section2-image"
+                 loading="lazy">
+          </div>
+
+          <!-- Feature Cards Right -->
+          <div class="section-cards-col">
+            <!-- Card 1: Risk Protection -->
+            <div class="feature-card" data-service="Risk Protection & Audit Preparedness" tabindex="0" role="button" aria-label="Learn more about Risk Protection">
+              <div class="card-icon-wrap">
+                <img src="assets/Risk Protection.png" alt="Risk Protection icon" class="card-icon">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Risk Protection</h3>
+                <p class="card-description">Stay ahead of audits, inspections, and compliance gaps with proactive support.</p>
+              </div>
+            </div>
+
+            <!-- Card 2: Hassle-Free Filings Clarity -->
+            <div class="feature-card" data-service="Hassle-Free Filings Clarity" tabindex="0" role="button" aria-label="Learn more about Hassle-Free Filings Clarity">
+              <div class="card-icon-wrap">
+                <img src="assets/Hassle-Free Filings Clarity.png" alt="Hassle-Free Filings icon" class="card-icon">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Hassle-Free Filings Clarity</h3>
+                <p class="card-description">From registration to ongoing reporting—we manage it end-to-end.</p>
+              </div>
+            </div>
+
+            <!-- Card 3: Regulatory Clarity -->
+            <div class="feature-card" data-service="Regulatory Clarity & Advisory" tabindex="0" role="button" aria-label="Learn more about Regulatory Clarity">
+              <div class="card-icon-wrap">
+                <img src="assets/Regulatory Clarity.png" alt="Regulatory Clarity icon" class="card-icon">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Regulatory Clarity</h3>
+                <p class="card-description">We decode complex compliance rules into simple, actionable steps.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== INTERACTIVE CONSULTATION & CONTACT MODAL ==================== -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
+  <div class="modal-dialog" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-badge">
+          <img src="assets/Logo.png" alt="Company Logo" class="modal-logo">
+        </div>
+        <h3 class="modal-title" id="modalTitle">Book a Compliance Consultation</h3>
+        <p class="modal-subtitle">Speak with our SEBI &amp; regulatory experts to simplify compliance for your research firm.</p>
+      </div>
+
+      <form class="modal-form" id="consultationForm">
+        <div class="form-group">
+          <label for="fullName">Full Name <span class="required">*</span></label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g. Rahul Sharma" required autocomplete="name">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="workEmail">Work Email <span class="required">*</span></label>
+            <input type="email" id="workEmail" name="workEmail" placeholder="rahul@firm.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+91 98765 43210" required autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="serviceInterest">Service Needed</label>
+          <select id="serviceInterest" name="serviceInterest">
+            <option value="End-to-End Compliance Support">End-to-End Compliance Support</option>
+            <option value="Risk Protection & Audit Preparedness">Risk Protection &amp; Audit Preparedness</option>
+            <option value="Hassle-Free Filings Clarity">Hassle-Free Filings Clarity</option>
+            <option value="Regulatory Clarity & Advisory">Regulatory Clarity &amp; Advisory</option>
+            <option value="Book a Consultation">General Consultation</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">How can we help? (Optional)</label>
+          <textarea id="message" name="message" rows="3" placeholder="Tell us about your research firm or specific compliance needs..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit-modal" id="submitBtn">
+          <span class="btn-spinner" id="btnSpinner" aria-hidden="true"></span>
+          <span class="btn-text">Schedule Free Call</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Back To Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Interactive JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
