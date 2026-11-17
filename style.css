@@ -29,7 +29,7 @@
 
   /* Layout */
   --max-width: 1440px;
-  --header-height-desktop: 100px;
+  --header-height-desktop: 80px;
   --header-height-mobile: 54px;
   --border-radius: 8px;
   --transition-speed: 0.25s;
@@ -102,13 +102,14 @@ button {
 
 .btn-outline {
   background-color: transparent;
-  border: 1px solid var(--color-primary);
+  border: 1.5px solid var(--color-primary);
   color: var(--color-primary);
 }
 
 .btn-outline:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-hover);
+  color: var(--color-primary-hover);
 }
 
 .btn-contact-header {
@@ -118,6 +119,15 @@ button {
 
 .btn-hero {
   width: 213px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 .btn-icon {
@@ -131,8 +141,8 @@ button {
    ========================================================================== */
 .site-header {
   width: 100%;
-  background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-header-border);
+  background-color: var(--color-primary-bg);
+  border-bottom: none;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -171,7 +181,7 @@ button {
 }
 
 .nav-link {
-  font-family: var(--font-roboto);
+  font-family: var(--font-figtree);
   font-size: 18px;
   font-weight: 500;
   color: var(--color-text-nav);
@@ -288,6 +298,7 @@ button {
   justify-content: space-between;
   padding: 12px 14px;
   border-radius: var(--border-radius);
+  font-family: var(--font-figtree);
   font-size: 18px;
   font-weight: 500;
   color: var(--color-text-nav);
@@ -333,9 +344,8 @@ button {
   position: relative;
   background-color: var(--color-primary-bg);
   overflow: hidden;
-  min-height: 829px;
-  display: flex;
-  align-items: center;
+  min-height: auto;
+  padding: 36px 0 60px;
 }
 
 /* Large subtle background blur matching Figma Ellipse 8 */
@@ -352,15 +362,16 @@ button {
   z-index: 1;
 }
 
+
 .hero-container {
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
-  padding: 60px 100px;
+  padding: 0 40px 0 100px;
   display: grid;
-  grid-template-columns: minmax(560px, 620px) minmax(500px, 1fr);
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: 580px 1fr;
+  gap: 20px;
+  align-items: flex-end;
   position: relative;
   z-index: 2;
 }
@@ -369,6 +380,7 @@ button {
 .hero-content {
   display: flex;
   flex-direction: column;
+  max-width: 580px;
 }
 
 .hero-title {
@@ -384,6 +396,7 @@ button {
 
 /* Underline Highlight under "Compliance" */
 .highlight-wrapper {
+  color: var(--color-primary); /* Blue #4356D6 */
   position: relative;
   display: inline-block;
   white-space: nowrap;
@@ -392,9 +405,9 @@ button {
 .curve-underline {
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: -4px;
   width: 100%;
-  height: 12px;
+  height: 14px;
   object-fit: fill;
   pointer-events: none;
 }
@@ -449,7 +462,7 @@ button {
 .hero-graphic {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .banner-image {
@@ -463,6 +476,7 @@ button {
    SECTION 2: WHY COMPLIANCE MATTERS
    ========================================================================== */
 .why-compliance-section {
+  position: relative;
   width: 100%;
   background-color: var(--color-white);
   padding: 60px 100px 90px;
@@ -488,6 +502,11 @@ button {
   font-weight: 600;
   line-height: 70px;
   color: var(--color-text-main);
+  max-width: 580px;
+}
+
+.highlight-blue {
+  color: var(--color-primary);
 }
 
 .section-lead-text {
@@ -498,14 +517,20 @@ button {
   color: var(--color-text-main);
 }
 
-/* Decorative Chevrons */
-.decorative-vector-wrap {
-  margin-bottom: 36px;
+/* Corner Chevrons (ekdum corner) */
+.section2-corner-chevrons {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+  line-height: 0;
 }
 
-.decorative-vector {
-  width: 102px;
+.corner-chevrons-img {
+  width: 138px;
   height: auto;
+  display: block;
 }
 
 /* Section Content: Illustration Left + 3 Feature Cards Right */
@@ -522,11 +547,28 @@ button {
   align-items: center;
 }
 
+.section2-illustration-wrap {
+  position: relative;
+  display: inline-block;
+  max-width: 594px;
+  width: 100%;
+}
+
+.sec2-curly-arrow {
+  position: absolute;
+  top: 15px;
+  right: -24px;
+  width: 36px;
+  height: auto;
+  pointer-events: none;
+}
+
 .section2-image {
   width: 100%;
   max-width: 594px;
   height: auto;
   object-fit: contain;
+  display: block;
 }
 
 /* Feature Cards Stack */
@@ -551,8 +593,12 @@ button {
 
 .feature-card:hover {
   border-color: var(--color-card-border-hover);
-  box-shadow: 0 4px 12px rgba(5, 26, 163, 0.12);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
+}
+
+.feature-card:hover .card-title {
+  color: var(--color-card-border-hover);
 }
 
 .card-icon-wrap {
@@ -598,9 +644,14 @@ button {
     padding: 0 50px;
   }
 
+  .hero-section {
+    padding: 30px 0 50px;
+  }
+
   .hero-container {
-    padding: 50px;
+    padding: 0 40px 0 50px;
     gap: 30px;
+    align-items: flex-end;
   }
 
   .hero-title {
@@ -640,6 +691,11 @@ button {
     display: flex;
   }
 
+  .mobile-drawer {
+    width: 475px;
+    max-width: 85%;
+  }
+
   .menu-icon-img {
     width: 34px;
     height: 34px;
@@ -648,8 +704,9 @@ button {
   /* Hero Section for Tablet */
   .hero-section {
     min-height: auto;
-    padding: 40px 0;
+    padding: 40px 0 50px;
   }
+
 
   .hero-container {
     padding: 0 24px;
@@ -692,6 +749,7 @@ button {
 
   .banner-image {
     max-width: 636px;
+    width: 100%;
   }
 
   /* Section 2 for Tablet */
@@ -701,31 +759,70 @@ button {
 
   .section-header-row {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
+    margin-bottom: 30px;
+    text-align: center;
   }
 
   .section-heading {
     font-size: 46px;
     line-height: 60px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
-  /* In Tablet: Feature cards stacked, image below */
+  .section-lead-text {
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* In Tablet: Illustration on top, Feature cards below */
   .section-content-row {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .section-cards-col {
+  .section-media-col {
     order: 1;
-    gap: 26px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
-  .section-media-col {
-    order: 2;
+  .section2-illustration-wrap {
+    max-width: 540px;
   }
 
   .section2-image {
-    max-width: 500px;
+    max-width: 540px;
+    width: 100%;
+  }
+
+  .sec2-curly-arrow {
+    top: 20px;
+    right: -24px;
+    width: 36px;
+  }
+
+  .section2-corner-chevrons {
+    bottom: 0;
+    left: 0;
+  }
+
+  .corner-chevrons-img {
+    width: 110px;
+  }
+
+  .section-cards-col {
+    order: 2;
+    gap: 26px;
+    max-width: 728px;
+    margin: 0 auto;
+    width: 100%;
   }
 }
 
@@ -808,8 +905,16 @@ button {
     width: 100%;
   }
 
+
+  .hero-graphic {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
   .banner-image {
     max-width: 350px;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -820,52 +925,83 @@ button {
 
   .section-header-row {
     margin-bottom: 24px;
+    text-align: center;
   }
 
   .section-heading {
     font-size: 34px;
-    line-height: 48px;
+    line-height: 46px;
+    font-weight: 700;
+    text-align: center;
+    max-width: 340px;
+    margin: 0 auto;
   }
 
   .section-lead-text {
-    font-size: 18px;
-    line-height: 32px;
-  }
-
-  .decorative-vector-wrap {
-    margin-bottom: 24px;
-  }
-
-  .decorative-vector {
-    width: 74px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    max-width: 340px;
+    margin: 16px auto 0;
   }
 
   .section-content-row {
+    grid-template-columns: 1fr;
     gap: 32px;
   }
 
+  .section-media-col {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .section2-illustration-wrap {
+    max-width: 320px;
+  }
+
   .section2-image {
-    max-width: 343px;
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .sec2-curly-arrow {
+    top: 15px;
+    right: -16px;
+    width: 28px;
+  }
+
+  .section2-corner-chevrons {
+    bottom: 0;
+    left: 0;
+  }
+
+  .corner-chevrons-img {
+    width: 80px;
   }
 
   .section-cards-col {
+    order: 2;
     gap: 20px;
+    width: 100%;
   }
 
   .feature-card {
     min-height: auto;
     padding: 20px 16px;
     gap: 16px;
+    width: 100%;
   }
 
   .card-title {
     font-size: 22px;
-    line-height: 28px;
+    line-height: 32px;
   }
 
   .card-description {
     font-size: 18px;
-    line-height: 28px;
+    line-height: 32px;
   }
 }
 
@@ -879,26 +1015,16 @@ button {
 }
 
 .site-header.scrolled {
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: rgba(250, 251, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(67, 86, 214, 0.08);
-  border-bottom-color: rgba(197, 215, 212, 0.6);
-}
-
-/* Subtle Hero Banner Animation */
-@keyframes subtleFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+  border-bottom: 1px solid rgba(226, 231, 255, 0.6);
 }
 
 .hero-graphic .banner-image {
-  animation: subtleFloat 5s ease-in-out infinite;
-  will-change: transform;
+  max-width: 739px;
+  height: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
