@@ -2,7 +2,7 @@
 
 A pixel-accurate, fully responsive static website built from the official Figma design for **Infotech Wizard**. Written in plain HTML5, CSS3, and vanilla JavaScript, with no build step and no dependencies.
 
-**Live demo:** `<add your Netlify / Vercel URL here>`
+**Live demo:** [simplifying-compliance.vercel.app](https://simplifying-compliance.vercel.app/)
 
 ---
 
