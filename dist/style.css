@@ -530,7 +530,7 @@ button {
   font-weight: 600;
   line-height: 70px;
   color: var(--color-text-main);
-  max-width: 580px;
+  max-width: 600px;
 }
 
 .highlight-blue {
@@ -539,8 +539,8 @@ button {
 
 .sec2-curly-arrow-desktop {
   position: absolute;
-  right: -45px;
-  bottom: -32px;
+  right: -42px;
+  bottom: -5px;
   width: 36px;
   height: auto;
   pointer-events: none;
@@ -569,7 +569,7 @@ button {
 
 .section-media-col {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -593,7 +593,7 @@ button {
 .sec2-illustration-chevrons {
   position: absolute;
   bottom: 0px;
-  left: -15px;
+  left: 0px;
   width: 137px;
   height: auto;
   pointer-events: none;
