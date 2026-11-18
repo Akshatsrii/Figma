@@ -31,7 +31,7 @@ This project is a frontend assessment: convert the Figma design into a productio
 - Mobile slide-in navigation drawer with menu icons, chevron indicators, and a bottom CTA
 - Tablet header that keeps the "Contact Us" button next to the hamburger trigger
 - Card hover states with border and color transitions
-- Semantic HTML5 markup
+- Semantic HTML markup
 - Centralized design tokens via CSS custom properties
 - Zero dependencies, so it deploys to any static host
 
