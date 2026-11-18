@@ -369,7 +369,7 @@ button {
   margin: 0 auto;
   padding: 0 40px 0 100px;
   display: grid;
-  grid-template-columns: 580px 1fr;
+  grid-template-columns: 606px 1fr;
   gap: 20px;
   align-items: flex-end;
   position: relative;
@@ -380,7 +380,7 @@ button {
 .hero-content {
   display: flex;
   flex-direction: column;
-  max-width: 580px;
+  max-width: 615px;
 }
 
 .hero-title {
@@ -412,6 +412,29 @@ button {
   pointer-events: none;
 }
 
+/* Responsive Line Break Helpers */
+.br-desktop { display: inline; }
+.br-tablet { display: none; }
+.br-mobile { display: none; }
+
+@media (min-width: 1025px) {
+  .br-desktop { display: inline; }
+  .br-tablet { display: none; }
+  .br-mobile { display: none; }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .br-desktop { display: none; }
+  .br-tablet { display: inline; }
+  .br-mobile { display: none; }
+}
+
+@media (max-width: 600px) {
+  .br-desktop { display: none; }
+  .br-tablet { display: none; }
+  .br-mobile { display: inline; }
+}
+
 .hero-subtitle {
   font-family: var(--font-roboto);
   font-size: 18px;
@@ -419,7 +442,7 @@ button {
   line-height: 32px;
   color: var(--color-text-main);
   margin-bottom: 26px;
-  max-width: 606px;
+  max-width: 615px;
 }
 
 /* Checklist */
@@ -496,6 +519,11 @@ button {
   margin-bottom: 30px;
 }
 
+.section-title-wrap {
+  position: relative;
+  display: inline-block;
+}
+
 .section-heading {
   font-family: var(--font-roboto);
   font-size: 48px;
@@ -509,28 +537,26 @@ button {
   color: var(--color-primary);
 }
 
+.sec2-curly-arrow-desktop {
+  position: absolute;
+  right: -45px;
+  bottom: -32px;
+  width: 36px;
+  height: auto;
+  pointer-events: none;
+}
+
+.sec2-curly-arrow-mobile {
+  display: none;
+}
+
 .section-lead-text {
   font-family: var(--font-roboto);
   font-size: 18px;
   font-weight: 400;
   line-height: 32px;
   color: var(--color-text-main);
-}
-
-/* Corner Chevrons (ekdum corner) */
-.section2-corner-chevrons {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 2;
-  line-height: 0;
-}
-
-.corner-chevrons-img {
-  width: 138px;
-  height: auto;
-  display: block;
+  max-width: 615px;
 }
 
 /* Section Content: Illustration Left + 3 Feature Cards Right */
@@ -550,25 +576,28 @@ button {
 .section2-illustration-wrap {
   position: relative;
   display: inline-block;
-  max-width: 594px;
-  width: 100%;
-}
-
-.sec2-curly-arrow {
-  position: absolute;
-  top: 15px;
-  right: -24px;
-  width: 36px;
-  height: auto;
-  pointer-events: none;
+  width: 594px;
+  height: 594px;
+  max-width: 100%;
+  flex-shrink: 0;
 }
 
 .section2-image {
-  width: 100%;
-  max-width: 594px;
-  height: auto;
+  width: 594px;
+  height: 594px;
+  max-width: 100%;
   object-fit: contain;
   display: block;
+}
+
+.sec2-illustration-chevrons {
+  position: absolute;
+  bottom: 0px;
+  left: -15px;
+  width: 137px;
+  height: auto;
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* Feature Cards Stack */
@@ -576,11 +605,14 @@ button {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  width: 594px;
+  max-width: 100%;
 }
 
 .feature-card {
-  width: 100%;
-  min-height: 142px;
+  width: 594px;
+  max-width: 100%;
+  min-height: 102px;
   background-color: var(--color-primary-bg);
   border: 1px solid var(--color-card-border);
   border-radius: var(--border-radius);
@@ -641,7 +673,7 @@ button {
    ========================================================================== */
 @media (max-width: 1280px) and (min-width: 1025px) {
   .header-container {
-    padding: 0 50px;
+    padding: 0 40px;
   }
 
   .hero-section {
@@ -649,7 +681,7 @@ button {
   }
 
   .hero-container {
-    padding: 0 40px 0 50px;
+    padding: 0 30px;
     gap: 30px;
     align-items: flex-end;
   }
@@ -660,16 +692,40 @@ button {
   }
 
   .why-compliance-section {
-    padding: 50px;
+    padding: 50px 20px 80px;
+  }
+
+  .section-container {
+    max-width: 1240px;
+    padding: 0;
   }
 
   .section-heading {
-    font-size: 44px;
-    line-height: 62px;
+    font-size: 46px;
+    line-height: 64px;
+  }
+
+  .section-lead-text {
+    max-width: 615px;
   }
 
   .section-content-row {
-    gap: 36px;
+    gap: 40px;
+  }
+
+  .section2-illustration-wrap {
+    width: 594px;
+    height: 594px;
+  }
+
+  .section2-image {
+    width: 594px;
+    height: 594px;
+  }
+
+  .feature-card {
+    width: 594px;
+    max-width: 100%;
   }
 }
 
@@ -710,7 +766,11 @@ button {
 
   .hero-container {
     padding: 0 24px;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 40px;
   }
 
@@ -718,30 +778,49 @@ button {
     max-width: 636px;
     margin: 0 auto;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-title {
     font-size: 54px;
     line-height: 75px;
+    text-align: center;
+    margin: 0 auto 20px auto;
   }
 
   .hero-subtitle {
     font-size: 18px;
     line-height: 32px;
-    max-width: 100%;
+    max-width: 600px;
+    margin: 0 auto 26px auto;
+    text-align: center;
   }
 
   .hero-checklist {
-    margin-bottom: 26px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin: 0 auto 26px auto;
   }
 
   .hero-cta-group {
+    display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 24px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .hero-graphic {
+    display: flex;
     justify-content: center;
+    align-items: center;
     max-width: 636px;
     margin: 0 auto;
     width: 100%;
@@ -764,6 +843,14 @@ button {
     text-align: center;
   }
 
+  .section-title-wrap {
+    margin: 0 auto;
+  }
+
+  .sec2-curly-arrow-desktop {
+    display: none !important;
+  }
+
   .section-heading {
     font-size: 46px;
     line-height: 60px;
@@ -776,7 +863,7 @@ button {
     font-size: 18px;
     line-height: 32px;
     text-align: center;
-    max-width: 600px;
+    max-width: 615px;
     margin: 0 auto;
   }
 
@@ -794,27 +881,36 @@ button {
   }
 
   .section2-illustration-wrap {
-    max-width: 540px;
+    width: 594px;
+    height: 594px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
   }
 
   .section2-image {
-    max-width: 540px;
-    width: 100%;
+    width: 594px;
+    height: 594px;
+    max-width: 100%;
+    object-fit: contain;
   }
 
-  .sec2-curly-arrow {
+  .sec2-curly-arrow-mobile {
+    display: block;
+    position: absolute;
     top: 20px;
     right: -24px;
     width: 36px;
+    height: auto;
+    pointer-events: none;
   }
 
-  .section2-corner-chevrons {
-    bottom: 0;
-    left: 0;
-  }
-
-  .corner-chevrons-img {
-    width: 110px;
+  .sec2-illustration-chevrons {
+    position: absolute;
+    bottom: -15px;
+    left: 0px;
+    width: 120px;
+    pointer-events: none;
   }
 
   .section-cards-col {
@@ -823,6 +919,12 @@ button {
     max-width: 728px;
     margin: 0 auto;
     width: 100%;
+  }
+
+  .feature-card {
+    width: 688px;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -856,17 +958,29 @@ button {
 
   .hero-container {
     padding: 0 16px;
-    gap: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 32px;
   }
 
   .hero-content {
-    max-width: 100%;
+    max-width: 343px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-title {
     font-size: 38px;
     line-height: 48px;
-    margin-bottom: 20px;
+    text-align: center;
+    margin: 0 auto 16px auto;
   }
 
   .curve-underline {
@@ -874,14 +988,22 @@ button {
   }
 
   .hero-subtitle {
-    font-size: 18px;
-    line-height: 32px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 28px;
+    max-width: 343px;
+    margin: 0 auto 20px auto;
+    text-align: center;
   }
 
   .hero-checklist {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
     gap: 12px;
-    margin-bottom: 24px;
+    margin: 0 auto 24px auto;
+    width: 100%;
+    max-width: 315px;
   }
 
   .checklist-item {
@@ -890,25 +1012,28 @@ button {
   }
 
   .checklist-text {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 15px;
+    line-height: 24px;
+    white-space: normal;
   }
 
   /* CTAs on Mobile stack vertically, 100% width */
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
-    gap: 16px;
+    max-width: 343px;
+    margin: 0 auto;
+    gap: 12px;
   }
 
   .btn-hero {
     width: 100%;
   }
 
-
   .hero-graphic {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
   }
 
@@ -928,6 +1053,14 @@ button {
     text-align: center;
   }
 
+  .section-title-wrap {
+    margin: 0 auto;
+  }
+
+  .sec2-curly-arrow-desktop {
+    display: none !important;
+  }
+
   .section-heading {
     font-size: 34px;
     line-height: 46px;
@@ -941,7 +1074,7 @@ button {
     font-size: 16px;
     line-height: 26px;
     text-align: center;
-    max-width: 340px;
+    max-width: 343px;
     margin: 16px auto 0;
   }
 
@@ -958,33 +1091,44 @@ button {
   }
 
   .section2-illustration-wrap {
-    max-width: 320px;
+    width: 343px;
+    height: 343px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
   }
 
   .section2-image {
-    max-width: 320px;
-    width: 100%;
+    width: 343px;
+    height: 343px;
+    max-width: 100%;
+    object-fit: contain;
   }
 
-  .sec2-curly-arrow {
-    top: 15px;
-    right: -16px;
+  .sec2-curly-arrow-mobile {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: -10px;
     width: 28px;
+    height: auto;
+    pointer-events: none;
   }
 
-  .section2-corner-chevrons {
-    bottom: 0;
-    left: 0;
-  }
-
-  .corner-chevrons-img {
+  .sec2-illustration-chevrons {
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
     width: 80px;
+    pointer-events: none;
   }
 
   .section-cards-col {
     order: 2;
     gap: 20px;
     width: 100%;
+    max-width: 343px;
+    margin: 0 auto;
   }
 
   .feature-card {
@@ -992,6 +1136,9 @@ button {
     padding: 20px 16px;
     gap: 16px;
     width: 100%;
+    max-width: 343px;
+    margin: 0 auto;
+  }
   }
 
   .card-title {
