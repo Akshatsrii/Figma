@@ -590,14 +590,19 @@ button {
   display: block;
 }
 
-.sec2-illustration-chevrons {
+.section2-chevrons-wrap {
   position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 137px;
-  height: auto;
+  left: 0;
+  bottom: 35px;
   pointer-events: none;
   z-index: 2;
+  line-height: 0;
+}
+
+.sec2-chevrons-img {
+  width: 137px;
+  height: auto;
+  display: block;
 }
 
 /* Feature Cards Stack */
@@ -878,6 +883,7 @@ button {
     display: flex;
     justify-content: center;
     width: 100%;
+    position: relative;
   }
 
   .section2-illustration-wrap {
@@ -905,12 +911,15 @@ button {
     pointer-events: none;
   }
 
-  .sec2-illustration-chevrons {
+  .section2-chevrons-wrap {
     position: absolute;
+    left: 0;
     bottom: -15px;
-    left: 0px;
-    width: 120px;
-    pointer-events: none;
+    top: auto;
+  }
+
+  .sec2-chevrons-img {
+    width: 140px;
   }
 
   .section-cards-col {
@@ -1088,6 +1097,7 @@ button {
     display: flex;
     justify-content: center;
     width: 100%;
+    position: relative;
   }
 
   .section2-illustration-wrap {
@@ -1115,12 +1125,15 @@ button {
     pointer-events: none;
   }
 
-  .sec2-illustration-chevrons {
+  .section2-chevrons-wrap {
     position: absolute;
-    bottom: -8px;
-    left: 0px;
-    width: 80px;
-    pointer-events: none;
+    left: 0;
+    bottom: -10px;
+    top: auto;
+  }
+
+  .sec2-chevrons-img {
+    width: 85px;
   }
 
   .section-cards-col {
