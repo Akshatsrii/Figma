@@ -515,7 +515,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 33px;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 30px;
 }
 
@@ -537,12 +537,17 @@ button {
   color: var(--color-primary);
 }
 
+.sec2-heading-end {
+  position: relative;
+  display: inline-block;
+}
+
 .sec2-curly-arrow-desktop {
   position: absolute;
-  right: -42px;
-  bottom: -5px;
+  left: calc(100% + 12px);
+  top: 10px;
   width: 36px;
-  height: auto;
+  height: 129px;
   pointer-events: none;
 }
 
@@ -557,6 +562,7 @@ button {
   line-height: 32px;
   color: var(--color-text-main);
   max-width: 615px;
+  margin-top: 8px;
 }
 
 /* Section Content: Illustration Left + 3 Feature Cards Right */
