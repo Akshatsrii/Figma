@@ -1147,21 +1147,28 @@ button {
   }
 
   .sec2-curly-arrow-mobile {
-    display: block;
+    display: block !important;
     position: absolute;
     top: 10px;
-    right: -10px;
+    right: 0;
     width: 28px;
     height: auto;
     pointer-events: none;
   }
 
   .section2-chevrons-wrap {
-    display: none !important;
+    display: block !important;
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    z-index: 2;
+    line-height: 0;
   }
 
   .sec2-chevrons-img {
     width: 85px;
+    height: auto;
+    display: block;
   }
 
   .section-cards-col {
