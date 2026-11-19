@@ -623,7 +623,8 @@ button {
 .section-cards-col {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  justify-content: space-between;
+  height: 594px;
   width: 594px;
   max-width: 100%;
 }
@@ -949,6 +950,8 @@ button {
 
   .section-cards-col {
     order: 2;
+    height: auto;
+    justify-content: flex-start;
     gap: 26px;
     max-width: 728px;
     margin: 0 auto;
@@ -1163,6 +1166,8 @@ button {
 
   .section-cards-col {
     order: 2;
+    height: auto;
+    justify-content: flex-start;
     gap: 20px;
     width: 100%;
     max-width: 343px;
