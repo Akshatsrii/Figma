@@ -607,7 +607,7 @@ button {
 .section2-chevrons-wrap {
   position: absolute;
   left: 0;
-  bottom: 35px;
+  bottom: 25px;
   pointer-events: none;
   z-index: 2;
   line-height: 0;
@@ -717,7 +717,7 @@ button {
   }
 
   .why-compliance-section {
-    padding: 50px 20px 60px;
+    padding: 50px 20px 90px;
   }
 
   .section-container {
@@ -900,7 +900,7 @@ button {
   /* In Tablet: Illustration on top, Feature cards below */
   .section-content-row {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 60px;
   }
 
   .section-media-col {
@@ -939,7 +939,7 @@ button {
   .section2-chevrons-wrap {
     position: absolute;
     left: 0;
-    bottom: -15px;
+    bottom: -50px;
     top: auto;
   }
 
@@ -1154,10 +1154,7 @@ button {
   }
 
   .section2-chevrons-wrap {
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    top: auto;
+    display: none !important;
   }
 
   .sec2-chevrons-img {
